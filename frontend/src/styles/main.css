@@ -1,0 +1,132 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background: #4dccff;
+    background: linear-gradient(180deg, rgba(77, 204, 255, 1) 0%, rgba(199, 239, 255, 1) 86%, rgba(255, 255, 255, 1) 100%) !important;
+}
+
+#hud {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+#clouds {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 50%;
+    background-image: url('../assets/images/clouds.png');    
+    background-repeat: repeat-x; 
+    background-size: 500px auto;     
+    background-position: left top 40px;
+    animation: moverNuvens 16s linear infinite;
+}
+
+#pipe {
+    background-image: url('../assets/images/pipe.png');
+    background-size: cover;
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    bottom: 100px;
+    animation: pipe-animation 3s infinite linear;
+}
+
+.animation-stoped {
+    animation-play-state: paused !important;
+}
+
+#character {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    bottom: 100px;
+    background-image: url('../assets/images/mario.gif');
+    background-size: cover;
+    z-index: 9999;
+}
+
+#ground {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100px;
+    background-image: url('../assets/images/brick.png');
+    background-size: 100px;
+    animation: moverChao 1.18s linear infinite;
+}
+
+.jumping {   
+    animation: jump .8s ease-out;
+}
+
+.died {
+    background-image: url('../assets/images/game-over.png') !important;
+    background-size: 80px !important;
+    background-repeat: no-repeat;
+    background-position: center;
+    animation: dying 1.5s both;
+}
+
+@keyframes pipe-animation {
+    from {
+        right: -120px;
+    }
+
+    to {
+        right: 100%;
+    }
+}
+
+@keyframes jump {
+    0% {
+        bottom: 100px;
+    }
+
+    50% {
+        bottom: 280px;
+    }
+
+    100% {
+        bottom: 100px;
+    }
+}
+
+@keyframes dying {
+    0% {
+        bottom: 100px;
+    }
+
+    50% {
+        bottom: 280px;
+    }
+
+    100% {
+        bottom: -180px;
+    }
+}
+
+@keyframes moverChao {
+  from {
+    background-position-x: 0;
+  }
+  to {
+    background-position-x: -500px; 
+  }
+}
+
+@keyframes moverNuvens {
+  from {
+    background-position-x: 0;
+  }
+  to {
+    background-position-x: -500px; 
+  }
+}

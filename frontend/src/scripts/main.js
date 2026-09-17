@@ -2,6 +2,8 @@ const character = document.getElementById("character");
 const pipe = document.getElementById("pipe");
 const ground = document.getElementById("ground");
 const pointsCounter = document.getElementById("points");
+const gameOver = document.getElementById("game-over");
+const restart= document.getElementById("restartbutton")
 
 let hasScored = false;
 let counter = 0;
@@ -22,8 +24,11 @@ const verifyLoop = setInterval(() => {
             character.classList.add("died");
             pipe.classList.add("animation-stoped");
             ground.classList.add("animation-stoped");
-        } else if (!hasScored) {
-            counter += 100;
+            gameOver.classList.add("show");
+            restart.classList.add("show");
+
+    } else if (!hasScored) {
+            counter += 100;s
             pointsCounter.innerText = counter;
             hasScored = true;
         }
@@ -34,4 +39,10 @@ const verifyLoop = setInterval(() => {
     }
 }, 10)
 
+
 document.addEventListener("keypress", jump)
+
+restart.addEventListener("click",() => {
+    location.reload();
+}
+)

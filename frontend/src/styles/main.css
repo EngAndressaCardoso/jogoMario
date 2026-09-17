@@ -74,6 +74,49 @@ body {
     background-position: center;
     animation: dying 1.5s both;
 }
+#game-over{
+    display: none;
+    position: absolute;
+    width: 1000px;
+    height: 800px;
+    left: 32%;
+    top: 40%;
+   
+    transform: translate(-50px, -50%);
+
+    background-image: url('../assets/images/—Pngtree—game\ over\ red\ word\ effect_5995281.png');
+    background: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+} 
+#game-over.show{
+    display: block;
+}
+#restartbutton{
+
+    display: none;
+    position: absolute;
+    width: 250px;
+    height: 100px;
+    left: 50%;
+    top: 68%;
+    
+    transform: translate(-50px, -50%);
+    
+    background-image: url('../assets/images/restart.png');
+    background-size: 150px auto;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: none;
+    background-color: transparent;
+    
+    cursor: pointer;
+
+}
+
+#restartbutton.show{
+    display: block;
+}
 
 @keyframes pipe-animation {
     from {

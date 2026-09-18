@@ -1,0 +1,225 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background: #4dccff;
+    background: linear-gradient(180deg, rgba(77, 204, 255, 1) 0%, rgba(199, 239, 255, 1) 86%, rgba(255, 255, 255, 1) 100%) !important;
+}
+
+#hud {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    z-index: 10000;
+
+    /* Estilização da caixa do placar */
+    background-color: rgba(0, 0, 0, 0.75);
+    border: 3px solid #f1c40f;
+    border-radius: 8px;
+    padding: 8px 18px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Ícone/Texto descritivo antes dos pontos */
+#hud::before {
+    content: "SCORE:";
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 18px;
+    font-weight: bold;
+    color: #f1c40f;
+    letter-spacing: 1px;
+}
+
+#hud p {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 24px;
+    font-weight: bold;
+    color: #ffffff;
+    text-shadow: 2px 2px #000000;
+    margin: 0;
+    letter-spacing: 2px;
+}
+
+#clouds {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 50%;
+    background-image: url('../assets/images/clouds.png');    
+    background-repeat: repeat-x; 
+    background-size: 500px auto;     
+    background-position: left top 40px;
+    animation: moverNuvens 16s linear infinite;
+}
+
+#pipe {
+    background-image: url('../assets/images/pipe.png');
+    background-size: cover;
+    width: 110px;
+    height: 110px;
+    position: absolute;
+    bottom: 100px;
+    animation: pipe-animation 3s infinite linear;
+}
+
+.animation-stoped {
+    animation-play-state: paused !important;
+}
+
+#character {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    bottom: 100px;
+    background-image: url('../assets/images/mario.gif');
+    background-size: cover;
+    z-index: 9999;
+}
+
+#ground {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100px;
+    background-image: url('../assets/images/brick.png');
+    background-size: 100px;
+    animation: moverChao 1.18s linear infinite;
+}
+
+.jumping {   
+    animation: jump .8s ease-out;
+}
+
+.died {
+    background-image: url('../assets/images/game-over.png') !important;
+    background-size: 80px !important;
+    background-repeat: no-repeat;
+    background-position: center;
+    animation: dying 1.5s both;
+}
+#game-over{
+    display: none;
+    position: absolute;
+    width: 1000px;
+    height: 800px;
+    left: 24%;
+    top: 32%;
+   
+    transform: translate(-50px, -50%);
+
+    background-image: url('../assets/images/—Pngtree—game\ over\ red\ word\ effect_5995281.png');
+    background: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+} 
+#game-over.show{
+    display: block;
+}
+#restartbutton {
+    display: none;
+    position: absolute;
+    left: 52%;
+    top: 68%;
+    transform: translate(-50%, -50%);
+    z-index: 10000;
+
+    /* Estilização Retrô / Gamer */
+    padding: 12px 28px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 20px;
+    font-weight: bold;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+
+    /* Cores e Bordas */
+    background-color: #e74c3c;
+    border: 4px solid #000000;
+    border-radius: 8px;
+    box-shadow: 0 6px 0 #952b1e, 0 10px 10px rgba(0, 0, 0, 0.3);
+    
+    cursor: pointer;
+    transition: all 0.1s ease;
+}
+
+/* Efeito ao passar o mouse */
+#restartbutton:hover {
+    background-color: #ff5252;
+    transform: translate(-50%, -53%);
+    box-shadow: 0 8px 0 #952b1e, 0 12px 12px rgba(0, 0, 0, 0.4);
+}
+
+/* Efeito ao clicar */
+#restartbutton:active {
+    transform: translate(-50%, -47%);
+    box-shadow: 0 2px 0 #952b1e, 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+#restartbutton.show{
+    display: block;
+}
+
+@keyframes pipe-animation {
+    from {
+        right: -120px;
+    }
+
+    to {
+        right: 100%;
+    }
+}
+
+@keyframes jump {
+    0% {
+        bottom: 100px;
+    }
+
+    50% {
+        bottom: 280px;
+    }
+
+    100% {
+        bottom: 100px;
+    }
+}
+
+@keyframes dying {
+    0% {
+        bottom: 100px;
+    }
+
+    50% {
+        bottom: 280px;
+    }
+
+    100% {
+        bottom: -180px;
+    }
+}
+
+@keyframes moverChao {
+  from {
+    background-position-x: 0;
+  }
+  to {
+    background-position-x: -500px; 
+  }
+}
+
+@keyframes moverNuvens {
+  from {
+    background-position-x: 0;
+  }
+  to {
+    background-position-x: -500px; 
+  }
+}

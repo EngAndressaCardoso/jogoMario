@@ -29,8 +29,7 @@ O presente projeto tem como objetivo o desenvolvimento de um jogo com a temátic
 2. Adição do botão de reiniciar o jogo
 3. Ajuste dos pixels de distância entre o Mário e o cano
 4. Ajuste do tamanho do cano em relação ao Mário
-5. Mudança do "character" para "mario"
-6. Ajuste da caixinha de pontos
+5. Ajuste da caixinha de pontos
 
 ## Alterações feitas na estrutura da equipe
 1. Remoção de Sellena como desenvolvedora e adição como documentadora

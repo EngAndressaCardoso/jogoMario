@@ -24,12 +24,24 @@ O presente projeto tem como objetivo o desenvolvimento de um jogo com a temátic
 5. Acesse o arquivo **index.html**
 6. Clique no botão do **Live Server**
 
+## Alterações feitas no código
+1. Adição da mensagem de GAME OVER
+2. Adição do botão de reiniciar o jogo
+3. Ajuste dos pixels de distância entre o Mário e o cano
+4. Ajuste do tamanho do cano em relação ao Mário
+5. Mudança do "character" para "mario"
+6. Ajuste da caixinha de pontos
+
+## Alterações feitas na estrutura da equipe
+1. Remoção de Sellena como desenvolvedora e adição como documentadora
+
+
 ## Integrantes
 |                           Nome                                    |   Matrícula     |        Papel          |
 | ----------------------------------------------------------------- | --------------- | --------------------- |
 | Andressa Valéria Cardoso  dos Santos                              |  01249591       | Scrum Master          |
 | Bruna Freitas da Silva                                            |  01832048       | Documentadora         |
-| Maria Doralice Aragão Negromonte da Silva                         |  01794484       | Testadora             |
+| Sellena de Assis Ribeiro Lima                                     |  01862534       | Documentadora         |
 | Rian Pedro Alves de Farias                                        |  01850177       | Desenvolvedor         |
-| Sellena de Assis Ribeiro Lima                                     |  01862534       | Desenvolvedora        |
 | Nicoly Gabriele da Silva                                          |  01864943       | Testadora             |
+| Maria Doralice Aragão Negromonte da Silva                         |  01794484       | Testadora             |

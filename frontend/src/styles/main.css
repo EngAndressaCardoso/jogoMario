@@ -43,7 +43,7 @@ body {
     animation-play-state: paused !important;
 }
 
-#character {
+#mario {
     position: absolute;
     width: 150px;
     height: 150px;

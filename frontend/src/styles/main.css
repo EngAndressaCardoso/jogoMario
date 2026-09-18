@@ -16,6 +16,27 @@ body {
     top: 20px;
     right: 30px;
     z-index: 10000;
+
+    /* Estilização da caixa do placar */
+    background-color: rgba(0, 0, 0, 0.75);
+    border: 3px solid #f1c40f;
+    border-radius: 8px;
+    padding: 8px 18px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Ícone/Texto descritivo antes dos pontos */
+#hud::before {
+    content: "SCORE:";
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 18px;
+    font-weight: bold;
+    color: #f1c40f;
+    letter-spacing: 1px;
 }
 
 #hud p {
@@ -25,6 +46,7 @@ body {
     color: #ffffff;
     text-shadow: 2px 2px #000000;
     margin: 0;
+    letter-spacing: 2px;
 }
 
 #clouds {
@@ -42,8 +64,8 @@ body {
 #pipe {
     background-image: url('../assets/images/pipe.png');
     background-size: cover;
-    width: 100px;
-    height: 100px;
+    width: 110px;
+    height: 110px;
     position: absolute;
     bottom: 100px;
     animation: pipe-animation 3s infinite linear;
@@ -55,8 +77,8 @@ body {
 
 #character {
     position: absolute;
-    width: 150px;
-    height: 150px;
+    width: 200px;
+    height: 200px;
     bottom: 100px;
     background-image: url('../assets/images/mario.gif');
     background-size: cover;
@@ -89,8 +111,8 @@ body {
     position: absolute;
     width: 1000px;
     height: 800px;
-    left: 32%;
-    top: 40%;
+    left: 24%;
+    top: 32%;
    
     transform: translate(-50px, -50%);
 
@@ -102,26 +124,44 @@ body {
 #game-over.show{
     display: block;
 }
-#restartbutton{
-
+#restartbutton {
     display: none;
     position: absolute;
-    width: 250px;
-    height: 100px;
-    left: 50%;
+    left: 52%;
     top: 68%;
-    
-    transform: translate(-50px, -50%);
-    
-    background-image: url('../assets/images/restart.png');
-    background-size: 150px auto;
-    background-repeat: no-repeat;
-    background-position: center;
-    border: none;
-    background-color: transparent;
+    transform: translate(-50%, -50%);
+    z-index: 10000;
+
+    /* Estilização Retrô / Gamer */
+    padding: 12px 28px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 20px;
+    font-weight: bold;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+
+    /* Cores e Bordas */
+    background-color: #e74c3c;
+    border: 4px solid #000000;
+    border-radius: 8px;
+    box-shadow: 0 6px 0 #952b1e, 0 10px 10px rgba(0, 0, 0, 0.3);
     
     cursor: pointer;
+    transition: all 0.1s ease;
+}
 
+/* Efeito ao passar o mouse */
+#restartbutton:hover {
+    background-color: #ff5252;
+    transform: translate(-50%, -53%);
+    box-shadow: 0 8px 0 #952b1e, 0 12px 12px rgba(0, 0, 0, 0.4);
+}
+
+/* Efeito ao clicar */
+#restartbutton:active {
+    transform: translate(-50%, -47%);
+    box-shadow: 0 2px 0 #952b1e, 0 4px 6px rgba(0, 0, 0, 0.3);
 }
 
 #restartbutton.show{

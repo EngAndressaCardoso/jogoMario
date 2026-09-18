@@ -170,5 +170,6 @@ body {
     background-position-x: 0;
   }
   to {
-    background-position-x: -500px; }
+    background-position-x: -500px; 
+  }
 }
